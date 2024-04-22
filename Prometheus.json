@@ -1,0 +1,493 @@
+{
+  "@type" : "extension/prometheus",
+  "assetClass" : "extension",
+  "assetType" : "prometheus",
+  "uuid" : "55264a88-bb55-4520-bdba-10675bbd2777",
+  "name" : "Prometheus",
+  "description" : "Mapping from layline.io dropwizard metrics to prometheus",
+  "prometheusMappings" : [
+    {
+      "uuid" : "fedac094-ae04-4fdc-b753-ff642288e7d0",
+      "modifier" : "add",
+      "anchor" : {
+        "relation" : "BEGIN",
+        "base" : null
+      },
+      "match" : "Counter.Source.*.Backlog",
+      "name" : "io_layline_counter_source_files_backlog",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "e5eb33a4-428f-4b44-a39f-5f2e4e3bca9e",
+          "first" : "source",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "e387ee0d-87ac-4bf9-ac43-b7739d5e3900",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Source.*.Failures",
+      "name" : "io_layline_counter_source_files_failures",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "f3577782-78db-48b1-8a4b-a354b4496654",
+          "first" : "source",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "0d77c12b-2381-4f88-bb39-715f18f179f5",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Source.*.Files",
+      "name" : "io_layline_counter_source_files",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "adb5f2cd-12bb-4ac3-8cb8-7c066282229a",
+          "first" : "source",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "1bfd037a-4f1f-4685-b672-a0f7976bea8c",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Source.*.FilesCancel",
+      "name" : "io_layline_counter_source_files_cancel",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "5f0c73c8-48aa-4a2e-b0a2-336fec431473",
+          "first" : "source",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "1713c81a-8279-4b9f-9a1d-f600e3e39866",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Source.*.FilesCommit",
+      "name" : "io_layline_counter_source_files_commit",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "7f28a777-f4ce-4fc7-86b3-bb23bf691e8b",
+          "first" : "source",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "68bbcf3b-8b77-4a15-b6e2-5026c0d7c124",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Source.*.FilesRollback",
+      "name" : "io_layline_counter_source_files_rollback",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "024a3609-fc5f-4f30-bb9b-024899c9fcb7",
+          "first" : "source",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "47791a8c-c9d4-4cf4-a304-44f9e8d709a8",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Source.*.Messages",
+      "name" : "io_layline_counter_source_messages",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "79c5f53c-6bf5-45db-9b48-411cedef53cd",
+          "first" : "source",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "caef48d7-a0a5-4ea0-b372-f3419b732e10",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Source.*.Lag.*.*.*",
+      "name" : "io_layline_counter_source_kafka",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "4f117632-015b-4375-bfbc-d193be9c6679",
+          "first" : "source",
+          "second" : "${0}"
+        },
+        {
+          "modifier" : "add",
+          "uuid" : "524c0e61-f982-4927-8c4f-2ac558db96bf",
+          "first" : "topic",
+          "second" : "${1}"
+        },
+        {
+          "modifier" : "add",
+          "uuid" : "8e37e2ef-1fc6-484a-a974-77f7fe0a16c0",
+          "first" : "consumer",
+          "second" : "${2}"
+        },
+        {
+          "modifier" : "add",
+          "uuid" : "ce1f347f-82ca-4864-bac7-eb7961a31055",
+          "first" : "partition",
+          "second" : "${3}"
+        }
+      ]
+    },
+    {
+      "uuid" : "5a70a11f-ef1c-4633-a263-779ed01fbc68",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Sink.*.Failures",
+      "name" : "io_layline_counter_sink_failures",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "93928eb3-43b0-4448-9c4a-42df188adf25",
+          "first" : "sink",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "09e31a95-c549-4ed5-b91b-99f38caf3c2c",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Sink.*.Files",
+      "name" : "io_layline_counter_sink_files",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "c672d8cb-2940-44f5-9d9c-00c8fe20a297",
+          "first" : "sink",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "929b3839-7095-4dd5-8191-46b6b73c4a23",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Sink.*.FilesCancel",
+      "name" : "io_layline_counter_sink_files_cancel",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "7d51e192-7d2b-4986-b344-94ae44d0b389",
+          "first" : "sink",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "0b336ab1-5c66-4442-ad3f-740a6d1e98f8",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Sink.*.FilesCommit",
+      "name" : "io_layline_counter_sink_files_commit",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "1fdf164a-78f5-484c-a255-4c8751524dd5",
+          "first" : "sink",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "83050e32-5035-4d90-8e52-8f6a6bdf12cc",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Sink.*.FilesRollback",
+      "name" : "io_layline_counter_sink_files_rollback",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "a6381a77-9749-428d-9a76-2c4305717811",
+          "first" : "sink",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "bf468b67-e353-4d21-b84d-dd5c95101ed3",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Sink.*.Messages",
+      "name" : "io_layline_counter_sink_messages",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "4b3ccafe-559e-47ec-8a94-aea913f46dee",
+          "first" : "sink",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "b115ce6c-3ce9-4a76-b960-d8af79713aec",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Service.*.Calls",
+      "name" : "io_layline_counter_service_calls",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "a71c2ff4-596d-4e82-9679-ec67b38ca12b",
+          "first" : "service",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "85eae5f6-f081-429a-a346-fd3bab2d6900",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Service.*.Failures",
+      "name" : "io_layline_counter_service_failures",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "d933e1de-ece8-407f-92b4-8180d04f53a9",
+          "first" : "service",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "697a3150-846f-4197-82b8-9be53699ad8e",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Service.*.Function.*.Calls",
+      "name" : "io_layline_counter_service_calls",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "97e0f7b9-c700-4357-b0ce-256875b45c7e",
+          "first" : "service",
+          "second" : "${0}"
+        },
+        {
+          "modifier" : "add",
+          "uuid" : "41814bcd-40d0-4327-82eb-9efcf32ff5de",
+          "first" : "function",
+          "second" : "${1}"
+        }
+      ]
+    },
+    {
+      "uuid" : "d737b0d5-2c41-4f87-baca-bf4c36dedabf",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Service.*.Function.*.Failures",
+      "name" : "io_layline_counter_service_failures",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "438100c3-455b-4310-a0e2-69907c07baef",
+          "first" : "service",
+          "second" : "${0}"
+        },
+        {
+          "modifier" : "add",
+          "uuid" : "b9357c7a-2049-476c-876e-873267f9c6c7",
+          "first" : "function",
+          "second" : "${1}"
+        }
+      ]
+    },
+    {
+      "uuid" : "4e06541f-5be7-42d9-b68c-faa98db0a73a",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Workflow.*.Instances",
+      "name" : "io_layline_counter_workflow_instances",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "3ecf1145-1f17-4e09-92b3-c64b47b226fa",
+          "first" : "workflow",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "74c8b34c-39e9-4b8b-b042-cbdd9ea777cc",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Workflow.*.Input.Messages",
+      "name" : "io_layline_counter_workflow_input_messages",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "93e8ca78-400e-46d4-80fe-e9c6d21f7cde",
+          "first" : "workflow",
+          "second" : "${0}"
+        }
+      ]
+    },
+    {
+      "uuid" : "e2595fc4-4b98-4fbd-b012-e9bec99d8408",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Workflow.*.*.Restarts",
+      "name" : "io_layline_counter_workflow_instance_restarts",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "cc6cc872-abca-4557-acac-4d7ae6f19f9b",
+          "first" : "workflow",
+          "second" : "${0}"
+        },
+        {
+          "modifier" : "add",
+          "uuid" : "33bca2ae-e97c-43a8-b292-d984d2d24a5f",
+          "first" : "instance",
+          "second" : "${1}"
+        }
+      ]
+    },
+    {
+      "uuid" : "3dccbd42-2cdd-41f5-9bf4-4dd2708109e1",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Workflow.*.Output.*.Messages",
+      "name" : "io_layline_counter_workflow_output_messages",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "656239f6-4cd4-49ba-8251-c244a22844d8",
+          "first" : "workflow",
+          "second" : "${0}"
+        },
+        {
+          "modifier" : "add",
+          "uuid" : "e24f71db-be2f-489e-8f15-1bf7bae223f7",
+          "first" : "processor",
+          "second" : "${1}"
+        }
+      ]
+    },
+    {
+      "uuid" : "14baf6bc-8959-4405-ade8-b16371a40d0f",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Workflow.*.*.Output.*.Messages",
+      "name" : "io_layline_counter_workflow_instance_output_messages",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "a750b6cc-e16a-45ea-a7a4-60cfec454904",
+          "first" : "workflow",
+          "second" : "${0}"
+        },
+        {
+          "modifier" : "add",
+          "uuid" : "5091c772-8076-4875-881d-6f6f5828932a",
+          "first" : "instance",
+          "second" : "${1}"
+        },
+        {
+          "modifier" : "add",
+          "uuid" : "f7f518ea-0d0e-40f0-acb3-f7d75a2aac10",
+          "first" : "processor",
+          "second" : "${2}"
+        }
+      ]
+    },
+    {
+      "uuid" : "ad9edb77-9caf-4ffc-b5b2-f3a64cf3e745",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Workflow.*.*.*.*.Messages",
+      "name" : "io_layline_counter_workflow_processor_outport_messages",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "9bb36f93-4b47-4e7e-8fe6-e963c0842989",
+          "first" : "workflow",
+          "second" : "${0}"
+        },
+        {
+          "modifier" : "add",
+          "uuid" : "12ffb2b3-83c1-4656-8132-f67cbcc4fabd",
+          "first" : "instance",
+          "second" : "${1}"
+        },
+        {
+          "modifier" : "add",
+          "uuid" : "a2d071e9-4b61-4d0c-a72e-ef99e2657215",
+          "first" : "processor",
+          "second" : "${2}"
+        },
+        {
+          "modifier" : "add",
+          "uuid" : "5b4d35fa-aa1b-4b0c-993c-add0a25dfe51",
+          "first" : "port",
+          "second" : "${3}"
+        }
+      ]
+    },
+    {
+      "uuid" : "c9567317-34da-4cfa-82d1-ad6c9488dda7",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Workflow.*.*.*.Profiling.PushMessage.*",
+      "name" : "io_layline_counter_workflow_processor_profilingMessages",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "f2606100-7084-436a-8221-ac035609b7b3",
+          "first" : "workflow",
+          "second" : "${0}"
+        },
+        {
+          "modifier" : "add",
+          "uuid" : "3963049f-eec1-4c49-b908-a22c13e54996",
+          "first" : "instance",
+          "second" : "${1}"
+        },
+        {
+          "modifier" : "add",
+          "uuid" : "fe3c1f20-4ccd-4e3e-8fd0-cd753cec1b93",
+          "first" : "processor",
+          "second" : "${2}"
+        },
+        {
+          "modifier" : "add",
+          "uuid" : "58faef3a-2a13-44d5-8817-8dc0cfbb12ed",
+          "first" : "pushMessageType",
+          "second" : "${3}"
+        }
+      ]
+    },
+    {
+      "uuid" : "8e3d2a04-0c40-4563-a02e-13cc233644bf",
+      "modifier" : "add",
+      "anchor" : null,
+      "match" : "Counter.Connection.*.Failures",
+      "name" : "io_layline_counter_connection_failures",
+      "labels" : [
+        {
+          "modifier" : "add",
+          "uuid" : "6ee75fb5-5735-4b0a-9571-4e16d0e13da4",
+          "first" : "connectionName",
+          "second" : "${0}"
+        }
+      ]
+    }
+  ]
+}
